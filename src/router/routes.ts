@@ -6,7 +6,7 @@ export const routes = [
             {
                 path:'/',
                 name:'homePage',
-                component: () => import('../pages/HomePage.vue')
+                component: () => import('../pages/MainPage.vue')
             }
         ]
     }
