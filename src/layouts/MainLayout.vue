@@ -1,47 +1,24 @@
 <template>
-    <q-layout view="hHh lpr lff">
+    <q-layout view="hhh lpr lff">
   
-      <q-header elevated class="bg-primary text-white" height-hint="98">
-        <q-toolbar>
-          
+      <q-header class="bg-yellow-theme text-white" height-hint="98">
+        <q-toolbar class="q-py-md">
           <q-toolbar-title>
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-            </q-avatar>
-            Title
+            <img src="../assets/logo.png"/>
           </q-toolbar-title>
-  
+          <navlink/>
+          <q-space/>
+          <q-btn class="bg-orange-theme gt-sm" label="Register" />
+          <img class="lt-md" src="../assets/menu.png"/>
         </q-toolbar>
-  
-        <q-tabs align="left">
-          <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-          <q-route-tab to="/page1" label="Page One" />
-          <q-route-tab to="/page2" label="Page Two" />
-          <q-route-tab to="/page3" label="Page Three" />
-        </q-tabs>
       </q-header>
-  
-      <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-        <!-- drawer content -->
-      </q-drawer>
-  
-      <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-        <!-- drawer content -->
-      </q-drawer>
   
       <q-page-container>
         <router-view />
       </q-page-container>
   
-      <q-footer elevated class="bg-grey-8 text-white">
-        <q-toolbar>
-          <q-toolbar-title>
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-            </q-avatar>
-            <div>Title</div>
-          </q-toolbar-title>
-        </q-toolbar>
+      <q-footer class="bg-yellow-theme text-black q-px-xl">
+        <Footer/>
       </q-footer>
   
     </q-layout>
@@ -49,6 +26,8 @@
   
   <script setup lang="ts">
   import { ref } from 'vue'
+  import Footer from '../components/Footer.vue';
+  import Navlink from '../components/Navlink.vue';
   
       const leftDrawerOpen = ref(false)
       const rightDrawerOpen = ref(false)
@@ -60,3 +39,56 @@
           rightDrawerOpen.value = !rightDrawerOpen.value
       }
   </script>
+
+<style>
+  .bg-yellow-theme{
+    background-color: #FFFAE9;
+  }
+  .bg-purple-theme{
+    background-color: #6637EE;
+  }
+  .bg-orange-theme{
+    background-color: #FD5D11;
+  }
+  .bg-dark-theme{
+    background-color: #191623;
+  }
+  .min-window-height{
+    min-height: 100vh;
+  }
+  .main-font{
+    font-family: 'Albert Sans';
+    font-style: normal;
+
+  }
+  
+  .main-title{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .main-title2{
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .relative{
+    position: relative;
+  }
+  .z-10{
+    z-index: 10;
+  }
+
+  @media (min-width:600px) {
+    .main-title{
+      font-weight: 600;
+      font-size: 75px;
+      line-height: 70px;
+    }
+    .main-title2{
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 70px;
+    }
+  }
+</style>
