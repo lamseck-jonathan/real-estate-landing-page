@@ -2,15 +2,18 @@
     <div class="min-window-height bg-yellow-theme q-py-xl q-px-xl relative overflow-hidden">
         <div 
         class="row justify-center q-gutter-x-lg"
-        @mouseenter="hover = true"
-        @mouseleave="hover = false"
+        @mouseenter="hoverHouse"
+        @mouseleave="leaveHouse"
         >
             <q-card 
             ref="house"
-            class="col-3 gt-sm house house-carousel"
+            class="col-3 gt-sm house"
             style="width:250px;height:350px" 
             v-for="image in 4" :key="image" 
-            :class="classHouse(image)"
+            :class="[
+                classHouse(image),
+                animationCompleted ? 'house-carousel' : ''
+            ]"
             >
                 <q-img 
                 style="width:250px;height:350px" 
@@ -70,25 +73,42 @@ import {
 
 const house = ref(null)
 const hover = ref(false)
+const animationCompleted = ref(false)
+
+function houseStaggerDone(){
+    animationCompleted.value = true
+}
+
+function hoverHouse(){
+    if(animationCompleted.value === true){
+        hover.value = true
+    }
+}
+function leaveHouse(){
+    if(animationCompleted.value === true){
+        hover.value = false
+    } 
+}
 
 function classHouse(id:number){
-    if(isEven(id) && hover.value === true){
+    if (isEven(id) && hover.value === false){
+        return 'q-mt-xl'
+    }
+    else if (!isEven(id) && hover.value === false){
         return ''
     }
-    else if (isEven(id) && hover.value === false){
-        return 'q-mt-xl'
+    else if (isEven(id) && hover.value === true){
+        return ''
     }
     else if (!isEven(id) && hover.value === true){
         return 'q-mt-xl'
     }
-    else{
-        return ''
-    }
 }
 
 onMounted(() => {
+    console.log('animation beginning')
     mouseInfinite('.mouse');
-    houseStaggerAnimation('.house');
+    houseStaggerAnimation('.house',houseStaggerDone);
     scrollTriggerFromLeftAnimation('.home-title')
     scrollTriggerFromLeftAnimation('.home-text')
     scrollTriggerOpacityAnimation('.mouse-group')

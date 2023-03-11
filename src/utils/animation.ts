@@ -12,12 +12,16 @@ export function mouseInfinite(className:string){
     })
 }
 
-export function houseStaggerAnimation(className:string){
-    gsap.from(className,{
+export function houseStaggerAnimation(className:string,onComplete?:() => void){
+    gsap.fromTo(className,{
         opacity:0,
         y:-200,
-        duration:1,
-        stagger:0.5
+    },{
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.5,
+        onComplete:onComplete
     })
 }
 
