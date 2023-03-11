@@ -24,7 +24,11 @@
             <q-card 
             class="col-3 lt-md house"
             style="width:150px;height:250px" 
-            v-for="image in 4" :key="image" :class="isEven(image) ? 'q-mt-xl' : ''"
+            v-for="image in 4" :key="image" 
+            :class="[
+                classHouse(image),
+                animationCompleted ? 'house-carousel' : ''
+            ]"
             >
                 <q-img 
                 style="width:150px;height:250px" 
