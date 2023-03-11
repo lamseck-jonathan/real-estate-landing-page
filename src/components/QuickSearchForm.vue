@@ -7,7 +7,7 @@
                 color="grey-8" 
                 label-color="grey-8" 
                 outlined 
-                v-model="text" 
+                v-model="search" 
                 label="Label"
             >
                 <template v-slot:append>
@@ -35,7 +35,7 @@ const options = [
     'Appartement',
     'Studio'
 ]
-
+const search = ref('')
 const selected = ref('')
 </script>
 
