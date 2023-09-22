@@ -1,6 +1,6 @@
 <template>
     <div class="gt-sm" v-for="link in links" :key="link.label">
-        <q-btn flat color="black" :label="link.label" />
+        <q-btn flat color="black" :label="link.label" :to="link.link"/>
     </div>
 </template>
 
@@ -8,23 +8,23 @@
 const links = [
     {
         label:'Home',
-        link:'#'
+        link:'#home'
     },
     {
         label:'About Us',
-        link:'#'
+        link:'#about'
     },
     {
         label:'Renters',
-        link:'#'
+        link:'#renters'
     },
     {
         label:'Homeoweners',
-        link:'#'
+        link:'#homeoweners'
     },
     {
         label:'Reviews',
-        link:'#'
+        link:'#reviews'
     },
 ]
 </script>

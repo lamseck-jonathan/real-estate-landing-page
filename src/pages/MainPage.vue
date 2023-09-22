@@ -1,12 +1,26 @@
 <template>
     <div>
-        <HomePage/>
-        <StatistiquePage/>
-        <BenefitPage/>
-        <PopularProperty/>
-        <VideoPage/>
-        <TestimonialPage/>
-        <ContactPage/>
+        <section id="home">
+            <HomePage/>
+        </section>
+        <section id="about">
+            <StatistiquePage/>
+        </section>
+        <section id="renters">
+            <BenefitPage/>
+        </section>
+        <section id="homeoweners">
+            <PopularProperty/>
+        </section>
+        <section id="home">
+            <VideoPage/>
+        </section>
+        <section id="reviews">
+            <TestimonialPage/>
+        </section>
+        <section id="home">
+            <ContactPage/>
+        </section>
     </div>
 </template>
 

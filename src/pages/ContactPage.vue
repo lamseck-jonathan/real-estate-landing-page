@@ -1,6 +1,6 @@
 <template>
     <div class="min-window-height row items-center justify-center bg-yellow-theme">
-        <div class="col-12 col-md-7 q-py-xl q-py-md-none row justify-center items-center q-gutter-x-lg">
+        <div class="col-12 col-md-7 q-py-xl q-py-md-none q-px-xl row justify-center items-center q-gutter-x-lg">
             <q-card 
             class="q-my-md col contact-card-size"
             >
@@ -49,13 +49,13 @@
 
 <style>
 .contact-card-size{
-    width: 200px;
+    width: 150px;
     height: 300px;
     border-radius: 15px;
 }
 @media (min-width: 600px) {
     .contact-card-size{
-        width: 200px;
+        width: 150px;
         height: 450px;
         border-radius: 15px;
     }

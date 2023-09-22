@@ -6,7 +6,18 @@ export const router = createRouter({
     history: createWebHashHistory(),
     routes, // short for `routes: routes`
     linkActiveClass: 'text-white underline underline-offset-8',
-    scrollBehavior (to, from, savedPosition) {
-        return window.scrollTo({ top: 0, behavior: 'smooth' });
-    }   
+    scrollBehavior (to,from, savedPosition){
+        if(to.hash){
+            return { 
+                el: to.hash,
+                behavior: 'smooth'
+            }
+        }
+        else if (savedPosition){
+            return savedPosition;
+        }
+        else{
+            return {x:0,y:0}
+        }
+    } 
 })

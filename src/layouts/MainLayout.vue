@@ -9,7 +9,7 @@
           <navlink/>
           <q-space/>
           <q-btn class="bg-orange-theme gt-sm" label="Register" />
-          <img class="lt-md" src="../assets/menu.png"/>
+          <q-btn color="black" dense flat round icon="menu" @click="toggleRightDrawer" />
         </q-toolbar>
       </q-header>
   

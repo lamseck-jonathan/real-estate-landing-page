@@ -1,5 +1,5 @@
 <template>
-    <div class="min-window-height bg-dark-theme q-gutter-y-xl column justify-end">
+    <div class="min-window-height bg-dark-theme column justify-end">
         <div class="row">
             <div class="col-12 col-md-6 column items-start q-pa-xl text-h4 text-white">
                 What client say
@@ -20,7 +20,7 @@
             </div>
         </div>
         <q-separator dark/>
-        <div class="row q-gutter-x-xl q-gutter-y-md q-gutter-y-md-none justify-center justify-md-between">
+        <div class="row q-mt-lg q-mb-xl q-px-md-none q-px-md q-gutter-x-xl q-gutter-y-md q-gutter-y-md-none justify-center justify-md-between">
             <img v-for="img in 5" :src="'logo'+img+'.png'"/>
         </div>
     </div>   
